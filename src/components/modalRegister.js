@@ -1,10 +1,11 @@
 import { useState } from "react"
 import { Modal, Button, Form } from "react-bootstrap"
 
-const ModalLogin = ({ isVisible, onHide, showModalRegister }) => {
+const ModalRegister = ({ isVisible, onHide, showModalLogin }) => {
   const [formData, setFormData] = useState({
     email: '',
-    password: ''
+    password: '',
+    fullname: ''
   })
 
   const onChange = e => {
@@ -15,16 +16,16 @@ const ModalLogin = ({ isVisible, onHide, showModalRegister }) => {
     e.preventDefault()
   }
 
-  const onClickRegister = () => {
+  const onClickLogin = () => {
     onHide()
-    showModalRegister()
+    showModalLogin()
   }
 
   return (
     <Modal centered show={isVisible} onHide={onHide}>
       <Modal.Body className="container-modal">
         <div className="title-modal">
-          Login
+          Register
         </div>
         <Form>
           <Form.Group controlId="formBasicEmail">
@@ -33,16 +34,19 @@ const ModalLogin = ({ isVisible, onHide, showModalRegister }) => {
           <Form.Group controlId="formBasicPassword">
             <Form.Control name="password" onChange={e => onChange(e)} type="password" placeholder="Password" />
           </Form.Group>
+          <Form.Group controlId="formBasicFullname">
+            <Form.Control name="fullname" onChange={e => onChange(e)} placeholder="Full Name" />
+          </Form.Group>
           <Button onClick={e => onSubmit(e)} className="btn-modal" variant="primary" type="submit" block>
-            Login
+            Register
           </Button>
         </Form>
         <div className="footer-modal">
-          Don't have an account ? Click&nbsp;<u className="cursor-pointer" onClick={onClickRegister}>Here</u>
+          Already have an account ? Click&nbsp;<u className="cursor-pointer" onClick={onClickLogin}>Here</u>
         </div>
       </Modal.Body>
     </Modal>
   )
 }
 
-export default ModalLogin
+export default ModalRegister

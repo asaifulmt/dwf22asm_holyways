@@ -1,6 +1,6 @@
 import { Nav, Navbar } from "react-bootstrap"
 
-const NavbarComponent = ({ onClickLogin }) => {
+const NavbarComponent = ({ onClickLogin, onClickRegister }) => {
   return (
     <Navbar variant="dark" className="navbar-container" expand="lg">
       <Navbar.Brand href="#home">
@@ -10,7 +10,7 @@ const NavbarComponent = ({ onClickLogin }) => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           <button className="btn btn-login" onClick={onClickLogin}>Login</button>
-          <button className="btn btn-register">Register</button>
+          <button className="btn btn-register" onClick={onClickRegister}>Register</button>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
