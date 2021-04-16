@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+
+import "bootstrap/dist/css/bootstrap.min.css"
+import "./styles/global.css"
+
+import Home from "./pages/home";
+import NotFound from "./pages/notFound";
+import Navbar from "./components/navbar";
+import ModalLogin from "./components/modalLogin";
 
 function App() {
+  const [modalIsVisible, setModalIsVisible] = useState(false)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Navbar onClickLogin={() => setModalIsVisible(true)} />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route component={NotFound} />
+      </Switch>
+      {
+        modalIsVisible && (
+          <ModalLogin isVisible={modalIsVisible} onHide={() => setModalIsVisible(false)} />
+        )
+      }
+    </Router>
+  )
 }
 
 export default App;
