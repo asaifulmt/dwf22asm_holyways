@@ -12,6 +12,14 @@
   --white-color: #e8e8e8;
 }
 
+body {
+  font-family: Product Sans;
+}
+
+.primary-color {
+  color: var(--primary-color);
+}
+
 .container-modal {
   padding: 33px;
 }
@@ -73,6 +81,15 @@
   font-family: Nunito;
 }
 
+.btn-fullwidth {
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: Nunito;
+  width: 100%;
+}
+
 .btn.btn-login {
   background-color: transparent;
   border: none;
@@ -101,6 +118,16 @@
   width: 177px;
   height: 40px;
   font-weight: 900;
+}
+
+.btn.btn-attachment, .btn.btn-attachment:hover, .btn.btn-attachment:active {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  width: 159px;
+  height: 45px;
 }
 
 .hero-section-top {
@@ -202,4 +229,53 @@
   width: 100px;
   height: 30px;
   color: var(--white-color);
+}
+
+.image-detail-donate {
+  width: 550px;
+  height: 500px;
+}
+
+.detail-donate-container {
+  width: 373px;
+}
+
+.detail-donate-title {
+  font-family: Product Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
+}
+
+.raised-fund-text-container {
+  font-family: Product Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gathered-text {
+  font-size: 18px;
+  line-height: 22px;
+  margin: 0;
+}
+
+.desc-detail-text {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: justify;
+}
+
+.btn-donate {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  height: 45px;
 }

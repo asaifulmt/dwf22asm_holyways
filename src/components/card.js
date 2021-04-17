@@ -34,6 +34,7 @@ const CardComponent = ({ img, title, text, progress }) => {
         </div>
       </Card.Body>
     </Card>
+    
   )
 }
 
