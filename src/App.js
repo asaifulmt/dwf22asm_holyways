@@ -1,4 +1,4 @@
-import { useState } from "react"
+// import { useState } from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -9,28 +9,44 @@ import NotFound from "./pages/notFound";
 import Navbar from "./components/navbar";
 import ModalLogin from "./components/modalLogin";
 import ModalRegister from "./components/modalRegister";
+import { UserContextProvider } from "./contexts/userContext";
+import PrivateRoute from "./components/privateRoute";
+import DetailDonate from "./pages/detailDonate";
+import { ModalContextProvider } from "./contexts/modalContext";
 
 function App() {
-  const [visibleLoginModal, setVisibleLoginModal] = useState(false)
-  const [visibleLoginRegister, setVisibleRegisterModal] = useState(false)
+  // const [visibleLoginModal, setVisibleLoginModal] = useState(false)
+  // const [visibleLoginRegister, setVisibleRegisterModal] = useState(false)
   return (
-    <Router>
-      <Navbar onClickLogin={() => setVisibleLoginModal(true)} onClickRegister={() => setVisibleRegisterModal(true)}/>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route component={NotFound} />
-      </Switch>
-      {
-        visibleLoginModal && (
-          <ModalLogin isVisible={visibleLoginModal} onHide={() => setVisibleLoginModal(false)} showModalRegister={() => setVisibleRegisterModal(true)} />
-        )
-      }
-      {
-        visibleLoginRegister && (
-          <ModalRegister isVisible={visibleLoginRegister} onHide={() => setVisibleRegisterModal(false)} showModalLogin={() => setVisibleLoginModal(true)} />
-        )
-      }
-    </Router>
+    <ModalContextProvider>
+      <UserContextProvider>
+        <Router>
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <PrivateRoute
+              exact
+              path="/donate/:id"
+              component={DetailDonate}
+            />
+
+            <Route component={NotFound} />
+          </Switch>
+          <ModalLogin />
+          <ModalRegister />
+          {/* {
+            visibleLoginModal && (
+              <ModalLogin isVisible={visibleLoginModal} onHide={() => setVisibleLoginModal(false)} showModalRegister={() => setVisibleRegisterModal(true)} />
+            )
+          }
+          {
+            visibleLoginRegister && (
+              <ModalRegister isVisible={visibleLoginRegister} onHide={() => setVisibleRegisterModal(false)} showModalLogin={() => setVisibleLoginModal(true)} />
+            )
+          } */}
+        </Router>
+      </UserContextProvider>
+    </ModalContextProvider>
   )
 }
 

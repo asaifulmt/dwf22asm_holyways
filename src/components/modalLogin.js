@@ -1,7 +1,12 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Modal, Button, Form } from "react-bootstrap"
+import { ModalContext } from "../contexts/modalContext";
+import { UserContext } from "../contexts/userContext";
 
-const ModalLogin = ({ isVisible, onHide, showModalRegister }) => {
+const ModalLogin = () => {
+  const [, dispatch] = useContext(UserContext);
+  const [{ isVisibleLogin }, dispatchModal] = useContext(ModalContext);
+
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -13,15 +18,22 @@ const ModalLogin = ({ isVisible, onHide, showModalRegister }) => {
 
   const onSubmit = e => {
     e.preventDefault()
+    dispatchModal({
+      type: 'HIDE_LOGIN_MODAL'
+    })
+    dispatch({
+      type: "LOGIN",
+    });
   }
 
   const onClickRegister = () => {
-    onHide()
-    showModalRegister()
+    dispatchModal({
+      type: 'SHOW_REGISTER_MODAL'
+    })
   }
 
   return (
-    <Modal centered show={isVisible} onHide={onHide}>
+    <Modal centered show={isVisibleLogin} onHide={() => dispatchModal({ type: 'HIDE_LOGIN_MODAL' })}>
       <Modal.Body className="container-modal">
         <div className="title-modal">
           Login

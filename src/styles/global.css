@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 :root {
   --primary-color: #c42424;
   --white-color: #e8e8e8;
@@ -41,4 +50,156 @@
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--primary-color);
+  height: 80px;
+}
+
+.icon {
+  height: 45px;
+  width: 65px;
+}
+
+.btn {
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: Nunito;
+}
+
+.btn.btn-login {
+  background-color: transparent;
+  border: none;
+  color: var(--white-color);
+  width: 100px;
+  height: 40px;
+  font-weight: 800;
+  margin-right: 1rem;
+}
+
+.btn-login:hover {
+  border: 1px solid var(--white-color);
+}
+
+.btn.btn-register {
+  color: var(--primary-color);
+  background-color: var(--white-color);
+  width: 100px;
+  height: 40px;
+  font-weight: 900;
+}
+
+.btn.btn-hero {
+  color: var(--primary-color);
+  background-color: var(--white-color);
+  width: 177px;
+  height: 40px;
+  font-weight: 900;
+}
+
+.hero-section-top {
+  background-color: var(--primary-color);
+  height: 623px;
+}
+
+
+.hero-section-top > .hero-left > .hero-content > .hero-title {
+  color: var(--white-color);
+  margin-bottom: 36px;
+}
+
+.hero-text {
+  font-family: Nunito;
+}
+
+.hero-section-top > .hero-left > .hero-content > .hero-text {
+  color: var(--white-color);
+  margin-bottom: 58px;
+}
+
+@media (min-width: 768px) {
+  .navbar-container {
+    padding: 0 100px;
+  }
+  .hero-section-top > .hero-left {
+    padding-left: 165px;
+  }
+  .hero-section-top > .hero-right {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 0;
+  }
+  .hero-section-bottom > .hero-left {
+    margin-top: -88px;
+    padding: 0;
+  }
+  .hero-section-top > .hero-left > .hero-content > .hero-title,
+  .hero-section-bottom > .hero-right > .hero-content {
+    width: 717px;
+  }
+  .hero-section-top > .hero-left > .hero-content > .hero-text {
+    width: 545px;
+  }
+}
+
+.hero-content {
+  margin-top: 71px;
+}
+
+.hero-section-bottom > .hero-right > .hero-content > .hero-title {
+  margin-bottom: 36px;
+}
+
+.hero-section-bottom > .hero-right > .hero-content {
+  margin-top: 148px;
+}
+
+.hero-title {
+  font-family: Product Sans;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
+  display: flex;
+  align-items: center;
+}
+
+.card-title {
+  font-family: Product Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 28px;
+  height: 52px;
+}
+
+.card-text {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.progress-bar {
+  background-color: var(--primary-color) !important;
+}
+
+.footer-card {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-card-donate {
+  background-color: var(--primary-color);
+  width: 100px;
+  height: 30px;
+  color: var(--white-color);
 }
