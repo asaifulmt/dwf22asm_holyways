@@ -16,6 +16,7 @@ import { ModalContextProvider } from "./contexts/modalContext";
 import ProfilePage from "./pages/profile";
 import RaiseFundPage from "./pages/raiseFund";
 import FormRaiseFundPage from "./pages/formRaiseFund";
+import ViewFund from "./pages/viewFund";
 
 function App() {
   // const [visibleLoginModal, setVisibleLoginModal] = useState(false)
@@ -47,7 +48,7 @@ function App() {
             <PrivateRoute
               exact
               path="/raise-fund/:id"
-              component={DetailDonate}  
+              component={ViewFund}  
             />
 
             <PrivateRoute
