@@ -30,7 +30,7 @@ const DetailDonate = () => {
             <img className="image-detail-donate" src="/fund.jpg" alt="img-detail" />
           </Col>
           <Col md={{ span: 5, offset: 2 }}>
-            <div className="detail-donate-title">
+            <div className="detail-title">
               The Strength of a People. Power of Community
             </div>
             <div className="detail-donate-container">
@@ -51,7 +51,7 @@ const DetailDonate = () => {
             </div>
           </Col>
         </Row>
-        <div className="detail-donate-title mt-5">
+        <div className="detail-title mt-5">
           List Donation (200)
         </div>
         <div className="mt-4">

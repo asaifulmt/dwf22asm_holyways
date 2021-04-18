@@ -12,7 +12,7 @@ const ProfilePage = () => {
     <Container style={{ marginTop: '79px'}}>
       <Row>
         <Col>
-          <p className="detail-donate-title">My Profile</p>
+          <p className="detail-title">My Profile</p>
           <Row>
             <Col md="5">
               <img src="profile-page.svg" alt="profile" style={{ borderRadius: '4px' }} />
@@ -34,7 +34,7 @@ const ProfilePage = () => {
           </Row>
         </Col>
         <Col>
-          <p className="detail-donate-title">History Donation</p>
+          <p className="detail-title">History Donation</p>
           {
           fakeData.map(({title, date, total}) => (
           <Card>

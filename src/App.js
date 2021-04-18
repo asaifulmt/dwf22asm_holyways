@@ -13,7 +13,9 @@ import { UserContextProvider } from "./contexts/userContext";
 import PrivateRoute from "./components/privateRoute";
 import DetailDonate from "./pages/detailDonate";
 import { ModalContextProvider } from "./contexts/modalContext";
-import ProfilePage from "./pages/profilePage";
+import ProfilePage from "./pages/profile";
+import RaiseFundPage from "./pages/raiseFund";
+import FormRaiseFundPage from "./pages/formRaiseFund";
 
 function App() {
   // const [visibleLoginModal, setVisibleLoginModal] = useState(false)
@@ -34,6 +36,24 @@ function App() {
               exact
               path="/profile"
               component={ProfilePage}
+            />
+
+            <Route
+              exact
+              path="/raise-fund"
+              component={RaiseFundPage}  
+            />
+
+            <PrivateRoute
+              exact
+              path="/raise-fund/:id"
+              component={DetailDonate}  
+            />
+
+            <PrivateRoute
+              exact
+              path="/form-raise-fund"
+              component={FormRaiseFundPage}  
             />
 
             <Route component={NotFound} />

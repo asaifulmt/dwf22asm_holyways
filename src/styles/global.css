@@ -226,7 +226,6 @@ body {
 
 .btn-card-donate {
   background-color: var(--primary-color);
-  width: 100px;
   height: 30px;
   color: var(--white-color);
 }
@@ -240,7 +239,7 @@ body {
   width: 373px;
 }
 
-.detail-donate-title {
+.detail-title {
   font-family: Product Sans;
   font-style: normal;
   font-weight: bold;
