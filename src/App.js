@@ -39,7 +39,7 @@ function App() {
               component={ProfilePage}
             />
 
-            <Route
+            <PrivateRoute
               exact
               path="/raise-fund"
               component={RaiseFundPage}  
