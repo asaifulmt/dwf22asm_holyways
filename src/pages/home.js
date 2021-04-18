@@ -14,6 +14,7 @@ const Home = () => {
               title="The Strength of a People. Power of Community"
               text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
               progress={35}
+              nominal="Rp. 25.000.000"
             />
           </Col>
           <Col>
@@ -22,6 +23,7 @@ const Home = () => {
               title="Empowering Communities Ending Poverty"
               text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
               progress={50}
+              nominal="Rp. 50.000.000"
             />
           </Col>
           <Col>
@@ -30,6 +32,7 @@ const Home = () => {
               title="Please our brothers in flores"
               text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
               progress={75}
+              nominal="Rp. 100.000.000"
             />
           </Col>
         </Row>

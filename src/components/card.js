@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { ModalContext } from "../contexts/modalContext";
 import { UserContext } from "../contexts/userContext";
 
-const CardComponent = ({ img, title, text, progress }) => {
+const CardComponent = ({ img, title, text, progress, nominal }) => {
   const [{ isLogin }] = useContext(UserContext);
   const [, dispatchModal] = useContext(ModalContext);
   const router = useHistory();
@@ -29,7 +29,7 @@ const CardComponent = ({ img, title, text, progress }) => {
         </Card.Text>
         <ProgressBar now={progress} />
         <div className="footer-card">
-          <div>Rp.100.000.000</div>
+          <div>{nominal}</div>
           <button className="btn btn-card-donate" onClick={goToDetailPage}>Donate</button>
         </div>
       </Card.Body>
